@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WORK TAH MATTERS</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="wtm1.css">
+    <script src="wtm1.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/73cd73023c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+     <!-- Header Section -->
+    <header class="header sticky-header">
+      <nav class="navbar">
+        <a href="#" class="logo">WORK THAT MATTERS</a>
+            <a href="#philosophy" class="active">PHILOSOPHY</a>
+            <a href="#our-team">OUR TEAM</a>
+            <a href="#articles">ARTICLES</a>
+            <a href="#asset-map">ASSET MAP</a>
+            <a href="#contacts">CONTACT</a>
+            <div class="dropdown">
+            <a href="#calculator" class="dropdown-link">CALCULATORS</a>
+            <div class="dropdown-content">
+              <a href="#estate-planning-calculator" id="estate-planning-link">Estate Planning Calculator</a>
+              <a href="#loan-repayment-calculator">Loan Repayment Calculator</a>
+              <a href="#tax-income-calculator">Tax Income Calculator</a>
+          </div>
+        </div>
+      </nav>
+</header>
+
+    <section class="workthatmatters">
+        <div class="workthatmatters-content">
+            <p>Helping Financial Advisors and clients</p><br>
+            <p> have a better conversation</p>
+        </div>
+    </section>
+    
+    <!-- Form Section for Client Inputs -->
+    <form id="general-info-form" style="display: none;">
+    <section class="form-section" id="general-info-form">
+     <!-- Client Name -->
+        <h2>General Information</h2>
+        <div class="form-group">
+        <label for="client-name">Client Name:</label>
+        <input type="text" id="client-name" placeholder="Enter your name">
+        </div>
+        <!-- Marital Status -->
+        <div class="form-group" id="marital-type-section">
+        <label for="married-status">Married status</label>
+        <select id="married-status"name="marital-status">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+            <option value="single">Single</option>
+            </select>
+            </div>
+        <!----marital type---->
+            <div class="form-group" id="marital-type"style="display: none;" >
+            <label for="marital-type">Marital Type:</label>
+                <select id="marital-type" name="marital-type">
+                <option value="married-cop">Married (COP)</option>
+                <option value="married-anc">Married (ANC)</option>
+            </select>
+        </div>
+        <!----spouse details---->
+        <div class="form-group" id="spouse-name" style="display: none;" >
+            <label for="spose-name">SPOUSE Name</label>
+            <input type="text" id="spouse-name" placeholder="Enter spouse name"> 
+            <label>are you living with spouse?</label>
+            <select id="spouse-residue">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+        </select>
+        </div>
+    </form>
+        <!-- Property Details for Married (ANC) -->
+        <div class="container mt-5" id="client-data-ANC" style="display: none;">
+            <h2>Client Data - ANC Specific Inputs</h2>
+            <table class="table table-bordered mt-3">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col">Field/Asset</th>
+                  <th scope="col">Market Value</th>
+                  <th scope="col">Base Cost</th>
+                  <th scope="col">% to Spouse</th>
+                  <th scope="col">% to Other</th>
+                  <th scope="col">% to Estate</th>
+                  <th scope="col">Tick box (Sold at Death)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Primary Residence</td>
+                  <td><input type="number" class="form-control" placeholder="Market Value"></td>
+                  <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Spouse"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Other"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Estate"></td>
+                  <td class="text-center"><input type="checkbox"></td>
+                </tr>
+                <tr>
+                  <td>Other Property</td>
+                  <td><input type="number" class="form-control" placeholder="Market Value"></td>
+                  <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Spouse"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Other"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Estate"></td>
+                  <td class="text-center"><input type="checkbox"></td>
+                </tr>
+                <tr>
+                  <td>Small Business Interest</td>
+                  <td><input type="number" class="form-control" placeholder="Market Value"></td>
+                  <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Spouse"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Other"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Estate"></td>
+                  <td class="text-center"><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Other Business Interest</td>
+                    <td><input type="number" class="form-control" placeholder="Market Value"></td>
+                    <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Spouse"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Other"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Estate"></td>
+                    <td class="text-center"><input type="checkbox"></td>
+                  </tr>
+                  <tr>
+                    <td>unit trusts</td>
+                    <td><input type="number" class="form-control" placeholder="Market Value"></td>
+                    <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Spouse"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Other"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Estate"></td>
+                    <td class="text-center"><input type="checkbox"></td>
+                  </tr>
+                  <tr>
+                    <td>shares</td>
+                    <td><input type="number" class="form-control" placeholder="Market Value"></td>
+                    <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Spouse"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Other"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Estate"></td>
+                    <td class="text-center"><input type="checkbox"></td>
+                  </tr>
+                  <tr>
+                    <td>endowments</td>
+                    <td><input type="number" class="form-control" placeholder="Market Value"></td>
+                    <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Spouse"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Other"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Estate"></td>
+                    <td class="text-center"><input type="checkbox"></td>
+                  </tr>
+                  <tr>
+                    <td>life cover (unapproved)</td>
+                    <td><input type="number" class="form-control" placeholder="Market Value"></td>
+                    <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Spouse"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Other"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Estate"></td>
+                    <td class="text-center"><input type="checkbox"></td>
+                  </tr>
+              </tbody>
+            </table>
+            <h4 class="asset-heading">Total Liabilities</h4>
+          <div class="form-group">
+              <label>Amount:</label>
+              <input type="number" name="total-liabilities-amount" placeholder="0">
+          </div>
+            <button class="btn btn-primary mt-3">Save and Continue</button>
+          </div>
+
+          <div class="container mt-5" id="spouse-data">
+            <h2>Spouse Data - ANC Specific Inputs</h2>
+            <table class="table table-bordered mt-3">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col">Field/Asset</th>
+                  <th scope="col">Market Value</th>
+                  <th scope="col">Base Cost</th>
+                  <th scope="col">% to Spouse</th>
+                  <th scope="col">% to Other</th>
+                  <th scope="col">% to Estate</th>
+                  <th scope="col">Tick box (Sold at Death)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Primary Residence</td>
+                  <td><input type="number" class="form-control" placeholder="Market Value"></td>
+                  <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Spouse"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Other"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Estate"></td>
+                  <td class="text-center"><input type="checkbox"></td>
+                </tr>
+                <tr>
+                  <td>Other Property</td>
+                  <td><input type="number" class="form-control" placeholder="Market Value"></td>
+                  <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Spouse"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Other"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Estate"></td>
+                  <td class="text-center"><input type="checkbox"></td>
+                </tr>
+                <tr>
+                  <td>Small Business Interest</td>
+                  <td><input type="number" class="form-control" placeholder="Market Value"></td>
+                  <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Spouse"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Other"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Estate"></td>
+                  <td class="text-center"><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Other Business Interest</td>
+                    <td><input type="number" class="form-control" placeholder="Market Value"></td>
+                    <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Spouse"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Other"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Estate"></td>
+                    <td class="text-center"><input type="checkbox"></td>
+                  </tr>
+                  <tr>
+                    <td>unit trusts</td>
+                    <td><input type="number" class="form-control" placeholder="Market Value"></td>
+                    <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Spouse"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Other"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Estate"></td>
+                    <td class="text-center"><input type="checkbox"></td>
+                  </tr>
+                  <tr>
+                    <td>shares</td>
+                    <td><input type="number" class="form-control" placeholder="Market Value"></td>
+                    <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Spouse"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Other"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Estate"></td>
+                    <td class="text-center"><input type="checkbox"></td>
+                  </tr>
+                  <tr>
+                    <td>endowments</td>
+                    <td><input type="number" class="form-control" placeholder="Market Value"></td>
+                    <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Spouse"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Other"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Estate"></td>
+                    <td class="text-center"><input type="checkbox"></td>
+                  </tr>
+                  <tr>
+                    <td>life cover (unapproved)</td>
+                    <td><input type="number" class="form-control" placeholder="Market Value"></td>
+                    <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Spouse"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Other"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Estate"></td>
+                    <td class="text-center"><input type="checkbox"></td>
+                  </tr>
+              </tbody>
+            </table>
+            <h4 class="asset-heading">Total Liabilities</h4>
+            <div class="form-group">
+              <label>Amount:</label>
+              <input type="number" name="total-liabilities-amount" placeholder="0">
+          </div>
+            <button class="btn btn-primary mt-3">Save and Continue</button>
+          </div>
+
+    <section class="form-section" id="add-info-ANC">
+        <div class="form-content">
+            <h2>Additional Section for ANC with Accrual Only</h2>  
+            <!-- Client Commencement Value -->
+            <div class="form-group">
+                <label for="client-commencement-value">Client Commencement Value:</label>
+                <input type="number" id="client-commencement-value" name="client-commencement-value" placeholder="Enter client commencement value">
+            </div>
+            
+            <!-- Client Total Assets Excluded from Marriage -->
+            <div class="form-group">
+                <label for="client-excluded-assets">Client Total Assets Excluded from Marriage:</label>
+                <input type="number" id="client-excluded-assets" name="client-excluded-assets" placeholder="Enter client total assets excluded">
+            </div>
+            
+            <!-- Spouse Commencement Value -->
+            <div class="form-group">
+                <label for="spouse-commencement-value">Spouse Commencement Value:</label>
+                <input type="number" id="spouse-commencement-value" name="spouse-commencement-value" placeholder="Enter spouse commencement value">
+            </div>
+            
+            <!-- Spouse Total Assets Excluded from Marriage -->
+            <div class="form-group">
+                <label for="spouse-excluded-assets">Spouse Total Assets Excluded from Marriage:</label>
+                <input type="number" id="spouse-excluded-assets" name="spouse-excluded-assets" placeholder="Enter spouse total assets excluded">
+            </div>
+            
+            <!-- Years of Marriage -->
+            <div class="form-group">
+                <label for="years-of-marriage">Years of Marriage:</label>
+                <input type="number" id="years-of-marriage" name="years-of-marriage" placeholder="Enter years of marriage">
+            </div>
+            <!-- Submit Button for ANC Section -->
+            <button type="submit" class="section-submit">Submit ANC with Accrual Details</button>
+        </div>
+    </section>    
+    </div>
+
+    <!-- Data Required for Client and Spouse (Joint) -->
+        <h2>Specific Inputs for Married (COP)</h2>
+         <div class="container mt-5 " id="married-COP">
+            <table class="table table-bordered mt-3">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col">Field/Asset</th>
+                  <th scope="col">Market Value</th>
+                  <th scope="col">Base Cost</th>
+                  <th scope="col">% to Spouse</th>
+                  <th scope="col">% to Other</th>
+                  <th scope="col">% to Estate</th>
+                  <th scope="col">Tick box (Sold at Death)</th>
+                  <th scope="col">Tick box (excluded COP)</th>
+                </tr>
+              </thead>
+              
+                <tr>
+                  <td>Primary Residence</td>
+                  <td><input type="number" class="form-control" placeholder="Market Value"></td>
+                  <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Spouse"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Other"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Estate"></td>
+                  <td class="text-center"><input type="checkbox"></td>
+                  <td class="text-center"><input type="checkbox"></td>
+                </tr>
+                <tr>
+                  <td>Other Property</td>
+                  <td><input type="number" class="form-control" placeholder="Market Value"></td>
+                  <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Spouse"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Other"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Estate"></td>
+                  <td class="text-center"><input type="checkbox"></td>
+                  <td class="text-center"><input type="checkbox"></td>
+                </tr>
+                <tr>
+                  <td>Small Business Interest</td>
+                  <td><input type="number" class="form-control" placeholder="Market Value"></td>
+                  <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Spouse"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Other"></td>
+                  <td><input type="number" class="form-control" placeholder="% to Estate"></td>
+                  <td class="text-center"><input type="checkbox"></td>
+                  <td class="text-center"><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Other Business Interest</td>
+                    <td><input type="number" class="form-control" placeholder="Market Value"></td>
+                    <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Spouse"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Other"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Estate"></td>
+                    <td class="text-center"><input type="checkbox"></td>
+                    <td class="text-center"><input type="checkbox"></td>
+                  </tr>
+                  <tr>
+                    <td>unit trusts</td>
+                    <td><input type="number" class="form-control" placeholder="Market Value"></td>
+                    <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Spouse"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Other"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Estate"></td>
+                    <td class="text-center"><input type="checkbox"></td>
+                    <td class="text-center"><input type="checkbox"></td>
+                  </tr>
+                  <tr>
+                    <td>shares</td>
+                    <td><input type="number" class="form-control" placeholder="Market Value"></td>
+                    <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Spouse"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Other"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Estate"></td>
+                    <td class="text-center"><input type="checkbox"></td>
+                    <td class="text-center"><input type="checkbox"></td>
+                  </tr>
+                  <tr>
+                    <td>endowments</td>
+                    <td><input type="number" class="form-control" placeholder="Market Value"></td>
+                    <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Spouse"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Other"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Estate"></td>
+                    <td class="text-center"><input type="checkbox"></td>
+                    <td class="text-center"><input type="checkbox"></td>
+                  </tr>
+                  <tr>
+                    <td>life cover (unapproved)</td>
+                    <td><input type="number" class="form-control" placeholder="Market Value"></td>
+                    <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Spouse"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Other"></td>
+                    <td><input type="number" class="form-control" placeholder="% to Estate"></td>
+                    <td class="text-center"><input type="checkbox"></td>
+                    <td class="text-center"><input type="checkbox"></td>
+                  </tr>
+              </tbody>
+            </table>
+            <h4 class="asset-heading">Total Liabilities</h4>
+            <div class="form-group">
+              <label>Amount:</label>
+              <input type="number" name="total-liabilities-amount" placeholder="0">
+          </div>
+            <button class="btn btn-primary mt-3">Save and Continue</button>
+          </div>
+
+    <!-- Small Business Interest -->
+    <div class="container mt-5" id="client-data-single">
+    <h2>Client Data - Single Inputs</h2>
+    <table class="table table-bordered mt-3">
+      <thead class="table-light">
+        <tr>
+          <th scope="col">Field/Asset</th>
+          <th scope="col">Market Value</th>
+          <th scope="col">Basest Cost</th>
+          <th scope="col">%to Other</th>
+          <th scope="col">% Estate</th>
+          <th scope="col">Tick box (Sold at Death)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Primary Residence</td>
+          <td><input type="number" class="form-control" placeholder="Market Value"></td>
+          <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+          <td class="text-center"><input type="checkbox"></td>
+        </tr>
+        <tr>
+          <td>Other Property</td>
+          <td><input type="number" class="form-control" placeholder="Market Value"></td>
+          <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+          <td class="text-center"><input type="checkbox"></td>
+        </tr>
+        <tr>
+          <td>Small Business Interest</td>
+          <td><input type="number" class="form-control" placeholder="Market Value"></td>
+          <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+          <td class="text-center"><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <td>endowments</td>
+            <td><input type="number" class="form-control" placeholder="Market Value"></td>
+            <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+            <td><input type="number" class="form-control" placeholder="% to Other"></td>
+            <td><input type="number" class="form-control" placeholder="% to Estate"></td>
+            <td class="text-center"><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>life cover (unapproved)</td>
+            <td><input type="number" class="form-control" placeholder="Market Value"></td>
+            <td><input type="number" class="form-control" placeholder="Base Cost"></td>
+            <td><input type="number" class="form-control" placeholder="% to Other"></td>
+            <td><input type="number" class="form-control" placeholder="% to Estate"></td>
+            <td class="text-center"><input type="checkbox"></td>
+          </tr>
+      </tbody>
+    </table>
+    <h4 class="asset-heading">Total Liabilities</h4>
+    <div class="form-group">
+      <label>Amount:</label>
+      <input type="number" name="total-liabilities-amount" placeholder="0">
+  </div>
+      </tbody>
+    </table>
+    <button class="btn btn-primary mt-3">Save and Continue</button>
+  </div>
+  
+ <!-- Total Liabilities -->
+    <h3>Total Liabilities</h3>
+    <div class="form-group">
+        <label for="total-liabilities-amount">Amount:</label>
+        <input type="number" id="total-liabilities-amount" name="total-liabilities-amount" placeholder="Enter amount">
+        </div>
+    </div>
+</section>
+<!--===============Footer design==========-->
+
+<footer class="footer">
+  <div class="footer-text">
+      <p>Coptright &copy;2024 by Thokoza Diya | All Rights Reserved</p>
+      <div class="footer-iconTop">
+          <a href="#philosophy"><i class='bx bx-up-arrow-alt'></i></a>
+      </div>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
